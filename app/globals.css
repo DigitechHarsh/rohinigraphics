@@ -1624,7 +1624,6 @@ footer {
   }
 
   .nav-menu {
-    display: none;
     position: absolute;
     top: 80px;
     left: 0;
@@ -1635,9 +1634,18 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
     z-index: 99;
+    
+    /* Smooth Dropdown Animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
   .nav-menu.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   .menu-btn {
     display: block;
