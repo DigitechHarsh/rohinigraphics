@@ -1610,7 +1610,19 @@ footer {
   }
 }
 
+/* Utility classes for responsive design */
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none !important;
+  }
+
   .nav-menu {
     display: none;
     position: absolute;

@@ -44,11 +44,17 @@ export default function Header() {
               Contact &amp; Quote
             </Link>
           </li>
+          <li className="mobile-only" style={{ marginTop: '1rem' }}>
+            <Link href="/contact" className="btn btn-primary" onClick={closeMenu} style={{ width: '100%', justifyContent: 'center' }}>
+              <span>Get Free Quote</span>
+              <i className="fa-solid fa-paper-plane"></i>
+            </Link>
+          </li>
         </ul>
         
         {/* Header Actions */}
         <div className="nav-actions">
-          <Link href="/contact" className="btn btn-primary" onClick={closeMenu}>
+          <Link href="/contact" className="btn btn-primary desktop-only" onClick={closeMenu}>
             <span>Get Free Quote</span>
             <i className="fa-solid fa-paper-plane"></i>
           </Link>
