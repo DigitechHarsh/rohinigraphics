@@ -69,7 +69,7 @@ export default function Footer() {
       <div className="container footer-bottom">
         <p>&copy; {currentYear} Rohini Graphics. All Rights Reserved. Surat, Gujarat, India.</p>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-          Made with <i className="fa-solid fa-heart" style={{ color: '#ef4444' }}></i> for Amarkumar Lavne branding excellence.
+          Made by <strong style={{ color: 'var(--brand-color)' }}>DigitechHarsh</strong>
         </p>
       </div>
     </footer>

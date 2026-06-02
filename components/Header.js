@@ -14,7 +14,7 @@ export default function Header() {
     <header id="header">
       <div className="container nav-wrapper">
         <Link href="/" className="logo" onClick={closeMenu}>
-          <img src="/logo/1.png" alt="Rohini Graphics Logo" style={{ height: '50px', width: 'auto' }} />
+          <img src="/logo/1.png" alt="Rohini Graphics Logo" style={{ height: '50px', width: 'auto', marginLeft: '0.5rem' }} />
         </Link>
         
         {/* Navigation Menu Links */}
