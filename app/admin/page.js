@@ -105,10 +105,10 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="admin-layout" style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg-secondary)', paddingTop: '80px' }}>
+    <div className="admin-layout" style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
       
       {/* Sidebar Navigation */}
-      <div className="admin-sidebar" style={{ width: '250px', background: 'var(--bg-primary)', borderRight: '1px solid var(--border-glass)', padding: '1rem 0', display: 'flex', flexDirection: 'column', position: 'sticky', top: '80px', height: 'calc(100vh - 80px)' }}>
+      <div className="admin-sidebar" style={{ width: '250px', background: 'var(--bg-primary)', borderRight: '1px solid var(--border-glass)', padding: '1rem 0', display: 'flex', flexDirection: 'column', position: 'sticky', top: 0, height: '100vh' }}>
         <div style={{ padding: '0 1.5rem', marginBottom: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', borderBottom: '1px solid var(--border-glass)', paddingBottom: '1rem' }}>
           <img src="/logo/1.png" alt="Rohini Graphics" style={{ height: '45px', width: 'auto', marginBottom: '0.25rem' }} />
           <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Administrator</span>
