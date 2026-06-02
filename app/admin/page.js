@@ -108,12 +108,13 @@ export default function AdminPage() {
     <div className="admin-layout" style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg-secondary)', paddingTop: '80px' }}>
       
       {/* Sidebar Navigation */}
-      <div className="admin-sidebar" style={{ width: '260px', background: 'var(--bg-primary)', borderRight: '1px solid var(--border-glass)', padding: '1.5rem 0', display: 'flex', flexDirection: 'column', position: 'sticky', top: '80px', height: 'calc(100vh - 80px)' }}>
-        <div style={{ padding: '0 1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1.25rem', color: 'var(--brand-color)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Admin Control</h2>
+      <div className="admin-sidebar" style={{ width: '250px', background: 'var(--bg-primary)', borderRight: '1px solid var(--border-glass)', padding: '1rem 0', display: 'flex', flexDirection: 'column', position: 'sticky', top: '80px', height: 'calc(100vh - 80px)' }}>
+        <div style={{ padding: '0 1.5rem', marginBottom: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', borderBottom: '1px solid var(--border-glass)', paddingBottom: '1rem' }}>
+          <img src="/logo/1.png" alt="Rohini Graphics" style={{ height: '45px', width: 'auto', marginBottom: '0.25rem' }} />
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Administrator</span>
         </div>
         
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', padding: '0 1rem', flex: 1 }}>
+        <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', padding: '0 0.75rem', flex: 1 }}>
           <button 
             onClick={() => setActiveTab('dashboard')}
             style={{ display: 'flex', alignItems: 'center', gap: '1rem', textAlign: 'left', padding: '1rem 1.25rem', borderRadius: '8px', border: '1px solid transparent', cursor: 'pointer', background: activeTab === 'dashboard' ? 'var(--brand-glow)' : 'transparent', color: activeTab === 'dashboard' ? 'var(--brand-color)' : 'var(--text-secondary)', transition: 'all 0.3s ease', fontWeight: activeTab === 'dashboard' ? '600' : '500', borderColor: activeTab === 'dashboard' ? 'rgba(255, 87, 34, 0.2)' : 'transparent' }}
