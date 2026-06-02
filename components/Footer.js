@@ -53,7 +53,7 @@ export default function Footer() {
           </p>
           <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>
             <i className="fa-solid fa-mobile-screen-button" style={{ color: 'var(--brand-color)', marginRight: '8px' }}></i>
-            +91 97279 68268
+            +91 97279 68268, +91 91733 55684
           </p>
           <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>
             <i className="fa-solid fa-envelope" style={{ color: 'var(--brand-color)', marginRight: '8px' }}></i>
@@ -69,7 +69,7 @@ export default function Footer() {
       <div className="container footer-bottom">
         <p>&copy; {currentYear} Rohini Graphics. All Rights Reserved. Surat, Gujarat, India.</p>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-          Made by <strong style={{ color: 'var(--brand-color)' }}>DigitechHarsh</strong>
+          Designed &amp; Powered By <strong style={{ color: 'var(--brand-color)' }}>DigitechHarsh</strong>
         </p>
       </div>
     </footer>
