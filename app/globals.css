@@ -354,8 +354,8 @@ header {
 }
 
 .hero-full-title {
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 1.15;
   margin-bottom: 1.5rem;
   font-weight: 800;
   color: white;
