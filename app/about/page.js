@@ -4,9 +4,9 @@ export default function About() {
       <div className="container">
         <div className="section-header" style={{ marginBottom: '2rem' }}>
           <span className="section-subtitle">Who We Are</span>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-            <img src="/logo/18years.jpeg" alt="18 Years" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
-            <h2 className="section-title" style={{ marginBottom: 0 }}>Celebrating 18 Years Since 2008</h2>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginBottom: '0.5rem' }}>
+            <img src="/logo/18years.jpeg" alt="18 Years" style={{ height: '120px', width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
+            <h2 className="section-title" style={{ marginBottom: 0, textAlign: 'left' }}>Celebrating 18 Years Since 2008</h2>
           </div>
           <p className="section-desc" style={{ marginTop: '0.5rem' }}>Rohini Graphics is Surat's premier design-to-build sign manufacturer. We combine engineering excellence, modern technology, and visual design mastery.</p>
         </div>
