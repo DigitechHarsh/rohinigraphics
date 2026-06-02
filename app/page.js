@@ -7,7 +7,7 @@ export default function Home() {
       {/* 1. Full-Bleed Hero Section */}
       <div className="hero-full">
         <div className="hero-full-content">
-          <div className="hero-tag animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <div className="hero-tag animate-fade-up" style={{ animationDelay: '0.1s', color: '#ffffff' }}>
             Premium Manufacturing Unit
           </div>
           <h1 className="hero-full-title animate-fade-up" style={{ animationDelay: '0.2s' }}>
