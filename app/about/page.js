@@ -2,13 +2,16 @@ export default function About() {
   return (
     <div className="section">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" style={{ marginBottom: '2rem' }}>
           <span className="section-subtitle">Who We Are</span>
-          <h2 className="section-title">Celebrating 18 Years Since 2008</h2>
-          <p className="section-desc">Rohini Graphics is Surat's premier design-to-build sign manufacturer. We combine engineering excellence, modern technology, and visual design mastery.</p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+            <img src="/logo/18years.jpeg" alt="18 Years" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
+            <h2 className="section-title" style={{ marginBottom: 0 }}>Celebrating 18 Years Since 2008</h2>
+          </div>
+          <p className="section-desc" style={{ marginTop: '0.5rem' }}>Rohini Graphics is Surat's premier design-to-build sign manufacturer. We combine engineering excellence, modern technology, and visual design mastery.</p>
         </div>
         
-        <div className="about-grid animate-fade-up">
+        <div className="about-grid animate-fade-up" style={{ marginTop: '0' }}>
           {/* Left: Owner Card and Profile */}
           <div className="about-visual">
             <div style={{ background: 'radial-gradient(circle at top right, var(--brand-glow) 0%, transparent 60%)', padding: '2rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-glass)' }}>
