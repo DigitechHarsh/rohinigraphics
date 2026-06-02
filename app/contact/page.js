@@ -6,7 +6,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 function ContactFormContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -143,8 +143,8 @@ function ContactFormContent() {
       const data = await response.json();
 
       if (data.success) {
-        showNotification(`Thank you, ${formData.name}! Your inquiry has been logged. Reference: ${data.data.inquiryId}`, 'success');
-        
+        showNotification(`Thank you, ${formData.name}! We have received your inquiry and will connect with you very soon. (Ref: ${data.data.inquiryId})`, 'success');
+
         // Reset form
         setFormData({
           name: '',
@@ -203,23 +203,23 @@ function ContactFormContent() {
           <h2 className="section-title">Request A Free Custom Quote</h2>
           <p className="section-desc">Submit your signboard parameters, design files, or fabrication details, and our technical estimators will respond within 24 hours.</p>
         </div>
-        
+
         <div className="contact-grid">
           {/* Left: Contact Details Panel */}
           <div className="contact-info-panel">
             <div>
               <h3>Contact Information</h3>
               <p>Have an immediate question or want a site audit in Surat? Connect directly with our team.</p>
-              
+
               <div className="contact-details">
                 <div className="contact-detail-item">
                   <div className="contact-detail-icon"><i className="fa-solid fa-user-tie"></i></div>
                   <div className="contact-detail-content">
                     <h4>Contact Person</h4>
-                    <p>Amar Kumar / Amarkumar Lavne</p>
+                    <p>Amarkumar Lavne</p>
                   </div>
                 </div>
-                
+
                 <div className="contact-detail-item">
                   <div className="contact-detail-icon"><i className="fa-solid fa-phone-volume"></i></div>
                   <div className="contact-detail-content">
@@ -230,7 +230,7 @@ function ContactFormContent() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="contact-detail-item">
                   <div className="contact-detail-icon"><i className="fa-solid fa-envelope-open-text"></i></div>
                   <div className="contact-detail-content">
@@ -238,7 +238,7 @@ function ContactFormContent() {
                     <p><a href="mailto:rohini.graphic08@gmail.com" style={{ color: 'var(--brand-color)' }}>rohini.graphic08@gmail.com</a></p>
                   </div>
                 </div>
-                
+
                 <div className="contact-detail-item">
                   <div className="contact-detail-icon"><i className="fa-solid fa-map-location-dot"></i></div>
                   <div className="contact-detail-content">
@@ -248,14 +248,14 @@ function ContactFormContent() {
                 </div>
               </div>
             </div>
-            
+
             <div style={{ borderTop: '1px solid var(--border-glass)', paddingTop: '2rem', marginTop: '2rem' }}>
               <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <i className="fa-solid fa-circle-check" style={{ color: 'var(--status-completed)' }}></i> MSME Registered &amp; GeM Registered Supplier
               </p>
             </div>
           </div>
-          
+
           {/* Right: Interactive Quotation Form */}
           <div className="contact-form-panel">
             <h3>Let&apos;s Elevate Your Brand</h3>
@@ -275,7 +275,7 @@ function ContactFormContent() {
                   />
                   {fieldError('name')}
                 </div>
-                
+
                 <div className="form-group">
                   <label htmlFor="form-phone" className="form-label">Phone Number *</label>
                   <input
@@ -290,7 +290,7 @@ function ContactFormContent() {
                   />
                   {fieldError('phone')}
                 </div>
-                
+
                 <div className="form-group">
                   <label htmlFor="form-email" className="form-label">Email Address</label>
                   <input
@@ -305,7 +305,7 @@ function ContactFormContent() {
                   />
                   {fieldError('email')}
                 </div>
-                
+
                 <div className="form-group">
                   <label htmlFor="form-product" className="form-label">Product of Interest *</label>
                   <select
@@ -332,7 +332,7 @@ function ContactFormContent() {
                   </select>
                   {fieldError('product')}
                 </div>
-                
+
                 <div className="form-group">
                   <label htmlFor="form-budget" className="form-label">Estimated Budget (INR)</label>
                   <select
@@ -350,7 +350,7 @@ function ContactFormContent() {
                     <option value="Above 5L">Above ₹5,00,000 (Corporate)</option>
                   </select>
                 </div>
-                
+
                 <div className="form-group">
                   <label htmlFor="form-priority" className="form-label">Urgency Level</label>
                   <select
@@ -365,7 +365,7 @@ function ContactFormContent() {
                     <option value="High">Extremely Urgent (Site Opening!)</option>
                   </select>
                 </div>
-                
+
                 <div className="form-group form-group-full">
                   <label htmlFor="form-message" className="form-label">Requirement Details *</label>
                   <textarea
@@ -380,7 +380,7 @@ function ContactFormContent() {
                   {fieldError('message')}
                 </div>
               </div>
-              
+
               <button
                 type="submit"
                 className="btn btn-primary"
