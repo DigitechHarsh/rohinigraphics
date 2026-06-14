@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/db';
-import Inquiry from '@/models/Inquiry';
+import { executeQuery } from '@/lib/db';
 
 const SEED_INQUIRIES = [
   {
@@ -80,21 +79,38 @@ export async function POST() {
 
 async function handleSeed() {
   try {
-    await dbConnect();
-    
-    // Wipe existing collection
-    await Inquiry.deleteMany({});
+    // Wipe existing table
+    await executeQuery('DELETE FROM inquiries');
     
     // Insert mock seed data
-    const seeded = await Inquiry.insertMany(SEED_INQUIRIES);
+    for (const inq of SEED_INQUIRIES) {
+      await executeQuery(
+        `INSERT INTO inquiries (inquiryId, name, phone, email, product, budget, priority, message, status, notes, createdAt)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          inq.inquiryId,
+          inq.name,
+          inq.phone,
+          inq.email,
+          inq.product,
+          inq.budget,
+          inq.priority,
+          inq.message,
+          inq.status,
+          inq.notes,
+          inq.createdAt
+        ]
+      );
+    }
     
     return NextResponse.json({
       success: true,
-      message: 'MongoDB collection successfully wiped and seeded with default data!',
-      count: seeded.length
+      message: 'MySQL table successfully wiped and seeded with default data!',
+      count: SEED_INQUIRIES.length
     }, { status: 200 });
   } catch (error) {
     console.error('API Error in Seeding database:', error.message);
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
+
