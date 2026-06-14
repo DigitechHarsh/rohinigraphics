@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { executeQuery } from '@/lib/db';
 
+export const dynamic = 'force-dynamic';
+
 // GET: Fetch list of inquiries with filtering parameters
 export async function GET(request) {
   try {

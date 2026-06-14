@@ -3,6 +3,8 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 import { executeQuery } from '@/lib/db';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const imagesDir = path.join(process.cwd(), 'public', 'rohini');
   let imageFiles = [];
