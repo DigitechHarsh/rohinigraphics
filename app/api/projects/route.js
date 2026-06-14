@@ -1,25 +1,32 @@
 import fs from 'fs';
 import path from 'path';
 import { NextResponse } from 'next/server';
+import { executeQuery } from '@/lib/db';
 
 export async function GET() {
   const imagesDir = path.join(process.cwd(), 'public', 'rohini');
+  let imageFiles = [];
   
   try {
-    if (!fs.existsSync(imagesDir)) {
-      return NextResponse.json({ images: [] });
+    // 1. Read from local filesystem if exists
+    if (fs.existsSync(imagesDir)) {
+      const files = fs.readdirSync(imagesDir);
+      imageFiles = files
+        .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
+        .map(file => `/rohini/${file}`);
     }
 
-    const files = fs.readdirSync(imagesDir);
-    
-    // Filter for image files
-    const imageFiles = files
-      .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
-      .map(file => `/rohini/${file}`);
+    // 2. Read from MySQL database (Cloudinary URLs)
+    const dbProjects = await executeQuery('SELECT * FROM projects ORDER BY id DESC');
+    const dbUrls = dbProjects.map(row => row.imageUrl);
 
-    return NextResponse.json({ images: imageFiles });
+    // Merge lists
+    const combinedImages = [...dbUrls, ...imageFiles];
+
+    return NextResponse.json({ images: combinedImages });
   } catch (error) {
     console.error('Failed to read rohini directory:', error);
     return NextResponse.json({ images: [] }, { status: 500 });
   }
 }
+
